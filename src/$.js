@@ -2,14 +2,12 @@
 $ = (function (document, window, $) {
   // Node covers all elements, but also the document objects
   var node = Node.prototype,
-      nodeList = NodeList.__proto__ || NodeList.prototype,
+      nodeList = NodeList.prototype,
       forEach = 'forEach',
       trigger = 'trigger',
       each = [][forEach],
       // note: createElement requires a string in Firefox
       dummy = document.createElement('i');
-
-  nodeList[forEach] = each;
 
   // we have to explicitly add a window.on as it's not included
   // in the Node object.
